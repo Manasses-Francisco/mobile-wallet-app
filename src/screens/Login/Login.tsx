@@ -47,13 +47,22 @@ function Login() {
                     <Input
                         leftIcon
                         iconSize={25}
+                        secureTextEntry={false} /** para  */
                         iconName="mail-outline"
+                        autoCapitalize="none" /** para a primeira letra não seja manuscula */
+                        autoCorrect={false} /** para o teclado de telefone não corrije os erros de nome  */
+                        keyboardType="email-address" /** para especificar é um campo para digitar um e-mail */
                         placeholder="Digite seu e-mail"
                     />
                     <Input
                         leftIcon
+                        rightIcon
                         iconSize={25}
+                        secureTextEntry
                         iconName="lock-closed-outline"
+                        keyboardType="default"
+                        autoCorrect={false}
+                        autoCapitalize="none"
                         placeholder="Digite a sua senha"
                     />
 

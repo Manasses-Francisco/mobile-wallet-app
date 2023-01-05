@@ -4,8 +4,8 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { Fontisto } from "@expo/vector-icons";
 
 export const Button = styled(RectButton)`
-    width:${RFValue(130)}px;
-    height:${RFValue(60)}px;
+    width:${RFValue(145)}px;
+    height:${RFValue(50)}px;
     border-radius:${RFValue(5)}px;
     align-items: center;
     justify-content: center;

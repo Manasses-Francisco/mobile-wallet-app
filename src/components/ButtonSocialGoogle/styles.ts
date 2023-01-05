@@ -3,8 +3,8 @@ import { RectButton } from "react-native-gesture-handler";
 import { RFValue } from "react-native-responsive-fontsize"
 
 export const Button = styled(RectButton)`
-    width:${RFValue(130)}px;
-    height:${RFValue(60)}px;
+    width:${RFValue(145)}px;
+    height:${RFValue(50)}px;
     border-radius:${RFValue(5)}px;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,6 @@ export const Button = styled(RectButton)`
     margin-bottom:${RFValue(16)}px;
     box-shadow: 1px 3px 3px rgba(0,0,0,0.2);
     background-color:${({theme})=> theme.COLORS.GRAY6};
-    margin-left:${RFValue(10)}px;
 `;
 
 export const IconGoogle= styled.Image`

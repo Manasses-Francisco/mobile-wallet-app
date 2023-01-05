@@ -1,12 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, ActivityIndicator, View ,Text} from "react-native";
 import { ThemeProvider } from "styled-components/native";
 
-import AppLoading from "expo-app-loading";
 
 import * as SplashScreen from "expo-splash-screen";
-
-SplashScreen.preventAutoHideAsync();
 
 import {
     useFonts,
@@ -24,6 +21,7 @@ import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 import COLORS from "./src/styles/theme";
 
 import { Login } from "./src/screens/Login/Login";
+import theme from "./src/styles/theme";
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -36,12 +34,13 @@ export default function App() {
         DMSerifDisplay_400Regular,
     });
 
+
     if (!fontsLoaded) {
-        return <AppLoading />;
+        return <ActivityIndicator />;
     }
 
     return (
-        <ThemeProvider theme={COLORS}>
+        <ThemeProvider theme={theme}>
             <StatusBar
                 style="dark"
                 translucent
@@ -49,7 +48,10 @@ export default function App() {
 
             />
 
-            <View>
+            <View style={{
+                flex:1,
+                backgroundColor:theme.COLORS.WHITE
+            }}>
                 <Login/>
             </View>
         </ThemeProvider>

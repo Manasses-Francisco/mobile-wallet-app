@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
-    height:${RFValue(50)}px;
+    height:${RFValue(60)}px;
     width:100%;
     justify-content:center;
     flex-direction: row;
@@ -15,7 +15,7 @@ export const Container = styled.View`
 
 export const InputContainer = styled.TextInput`
     flex:1;
-    height:${RFValue(45)}px;
+    height:${RFValue(50)}px;
     border:0;
     border-radius:${RFValue(8)}px;
     font-size:${RFValue(14)}px;
