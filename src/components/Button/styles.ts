@@ -5,7 +5,6 @@ import { Pressable,TouchableOpacity } from "react-native";
 export const Container = styled(TouchableOpacity).attrs({
 
 })`
-    width:100%;
     height:${RFValue(50)}px;
     align-items:center;
     justify-content:center;

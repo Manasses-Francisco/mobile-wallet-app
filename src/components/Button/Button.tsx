@@ -12,7 +12,7 @@ interface IButtonProps {
     iconName?: keyof typeof AntDesign.glyphMap;
     isLoading?: boolean;
     disabled?: boolean;
-    variant?: "primary" | "outline" | "black";
+    variant?: "primary" | "outline" | "black" | "transparent";
     style?: TouchableOpacityProps["style"];
 }
 
@@ -44,7 +44,7 @@ const Button: React.FC<IButtonProps> = ({
                         <AntDesign
                             name={iconName}
                             size={25}
-                            color={buttonStyle.icon.color}
+                            color={buttonStyle.icon?.color}
                             style={{
                                 marginRight:15
                             }}

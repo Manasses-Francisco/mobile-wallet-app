@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView, Text, KeyboardAvoidingView } from "react-native";
 import { useTheme } from "styled-components";
 
 import { Button } from "../../components/Button";
@@ -13,7 +13,13 @@ import {
     Description,
     ViewButton,
     ContentBody,
-    ContentFooter
+    ContentFooter,
+    ButtonSignUp,
+    TitleButtonSignUp1,
+    TitleButtonSignUp2,
+    ContentForgotPassword,
+    ContentButtonForgotPassword,
+    ContentTitleForgotPassword
  } from "./styles";
 
 function Login() {
@@ -30,7 +36,10 @@ function Login() {
     }
 
     return (
-        <SafeAreaView>
+        <KeyboardAvoidingView
+            behavior="position"
+            enabled
+        >
             <Container>
                 <ContentHeader>
                     <Title>Seja bem vindo(a) {"\n"}a App Carteira</Title>
@@ -66,6 +75,17 @@ function Login() {
                         placeholder="Digite a sua senha"
                     />
 
+                    <ContentForgotPassword>
+                        {/*<ContentButtonForgotPassword onPress={() => { console.log("Recuperar a senha")}}>
+                            <ContentTitleForgotPassword>Recuperar Senha</ContentTitleForgotPassword>
+                        </ContentButtonForgotPassword>*/}
+                        <Button
+                            title="Recuperar Senha"
+                            onPress={() =>{}}
+                            variant='transparent'
+                        />
+                    </ContentForgotPassword>
+
                     <Button
                         title="Entrar"
                         variant="primary"
@@ -76,10 +96,13 @@ function Login() {
                 </ContentBody>
 
                 <ContentFooter>
-
+                    <ButtonSignUp onPress={() => {}}>
+                        <TitleButtonSignUp1>Não tem cadastro ainda?</TitleButtonSignUp1>
+                        <TitleButtonSignUp2>Cadastre-se</TitleButtonSignUp2>
+                    </ButtonSignUp>
                 </ContentFooter>
             </Container>
-        </SafeAreaView>
+        </KeyboardAvoidingView>
     );
 }
 
