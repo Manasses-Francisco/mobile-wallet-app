@@ -9,7 +9,7 @@ export const Container = styled.View`
     align-items:center;
     padding:0 ${RFValue(12)}px;
     border-radius:${RFValue(8)}px;
-    background-color:${({theme}) => (theme.COLORS.GRAY6)};
+    background-color:${({theme}) => (theme.COLORS.GRAY5)};
     margin-top: ${RFValue(10)}px;
 `;
 

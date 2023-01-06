@@ -1,9 +1,7 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, ActivityIndicator, View ,Text} from "react-native";
+import { StyleSheet, ActivityIndicator, View, Text } from "react-native";
 import { ThemeProvider } from "styled-components/native";
-
-
-import * as SplashScreen from "expo-splash-screen";
+import { NavigationContainer } from "@react-navigation/native";
 
 import {
     useFonts,
@@ -18,10 +16,9 @@ import { DMSans_400Regular } from "@expo-google-fonts/dm-sans";
 
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 
-import COLORS from "./src/styles/theme";
-
-import { Login } from "./src/screens/Login/Login";
+//import { Login } from "./src/screens/Login/Login";
 import theme from "./src/styles/theme";
+import { Routes } from "./src/routes";
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -34,26 +31,28 @@ export default function App() {
         DMSerifDisplay_400Regular,
     });
 
-
     if (!fontsLoaded) {
         return <ActivityIndicator />;
     }
 
     return (
         <ThemeProvider theme={theme}>
-            <StatusBar
-                style="dark"
-                translucent
-                backgroundColor="transparent"
+            <NavigationContainer>
+                <StatusBar
+                    style="dark"
+                    translucent
+                    backgroundColor="transparent"
+                />
 
-            />
-
-            <View style={{
-                flex:1,
-                backgroundColor:theme.COLORS.WHITE
-            }}>
-                <Login/>
-            </View>
+                <View
+                    style={{
+                        flex: 1,
+                        backgroundColor: theme.COLORS.WHITE,
+                    }}
+                >
+                    <Routes/>
+                </View>
+            </NavigationContainer>
         </ThemeProvider>
     );
 }
